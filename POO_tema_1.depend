@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1553117890 source:c:\users\grizonel\desktop\poo\poo_tema_1\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+	"POO_tema_1.h"
+
+1553117910 c:\users\grizonel\desktop\poo\poo_tema_1\poo_tema_1.h
+
