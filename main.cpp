@@ -115,6 +115,16 @@ void MatriceIntregi::set_Dimensiuni(int i, int j)                              /
     nr_coloane = j;
 }
 
+int &VectorIntregi::operator [] (int i)
+{
+    return v[i];
+}
+
+VectorIntregi &MatriceIntregi:: operator[](int i)
+{
+    return a[i];
+}
+
 std::istream & operator >> (std::istream &in,  MatriceIntregi &matrice)        // supraincarcarea op. de citire pt MATRICE
 {
 
@@ -177,7 +187,7 @@ int main()
         if (cerinta == 1)
         {
             //SUBPUNCT 1
-            int nr;
+            int nr, poz_elem;
             cout << "Dati numarul de elemente ale vectorului: ";
             cin >> nr;
             VectorIntregi v1(nr);                                   // apelez constructorul prin care aloc memorie
@@ -186,6 +196,10 @@ int main()
             v2.set_Nr(nr);
             cout << "Scrieti elementele vectorului nr. 1: ";
             cin >> v1;
+            cout << "Dati pozitia elementului(incepand cu zero): ";
+            cin >> poz_elem;
+            cout << "Elementul de pe pozitia " << poz_elem << " este: ";
+            cout << v1[poz_elem] << endl;
             cout << "Suma: " << v1.suma() << endl;
             cout << "Maxim: " << v1.maxim() << endl;
             cout << "Pozitie maxim: " << v1.poz_maxim() << endl;
@@ -201,7 +215,7 @@ int main()
         else if (cerinta == 2)
         {
             //SUBPUNCT 2
-            int nr_linii, nr_coloane;
+            int nr_linii, nr_coloane, poz_elem;
             cout << "Dati numarul de linii si de coloane ale matricii: ";
             cin >> nr_linii >> nr_coloane;
             MatriceIntregi m1(nr_linii);
@@ -212,6 +226,10 @@ int main()
             m3.set_Dimensiuni(nr_linii,nr_coloane);
             cout << "Scrieti matricea nr. 1:" << endl;
             cin >> m1;
+            cout << "Dati pozitia liniei(incepand cu 0): ";
+            cin >> poz_elem;
+            cout << "Linia de pe pozitia " << poz_elem << " este: ";
+            cout << m1[poz_elem] << endl;
             cout << "Scrieti matricea nr. 2:" << endl;
             cin >> m2;
             cout << "Suma celor doua matrici este: " << endl;

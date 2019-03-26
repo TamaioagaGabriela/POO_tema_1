@@ -19,7 +19,7 @@ public:
     int get_Nr();
     int * get_Vect();
     int operator* (VectorIntregi w);
-
+    int & operator [] (int i);
     friend std::ostream & operator << (std::ostream &out, const VectorIntregi &vect);
     friend std::istream & operator >> (std::istream &in, VectorIntregi &vect);
     friend class MatriceIntregi;
@@ -42,6 +42,7 @@ public:
     void set_Dimensiuni(int i, int j);
     VectorIntregi * get_A();
     int get_Nr_linii();
+    VectorIntregi & operator [] (int i);
 
     friend std::ostream & operator << (std::ostream &out, const VectorIntregi &vect);
     friend std::istream & operator >> (std::istream &in, VectorIntregi &vect);
